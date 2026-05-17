@@ -74,7 +74,6 @@ fun Route.stockRoutes(supabase: SupabaseClient){
         }
         get("/summary") {
             try {
-                // Lê diretamente da View que criamos no Supabase
                 val summary = supabase.postgrest["stocks"].select().decodeList<Summary>()
                 call.respond(summary)
             } catch (e: Exception) {
