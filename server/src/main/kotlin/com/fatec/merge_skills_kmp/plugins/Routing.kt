@@ -1,11 +1,7 @@
 package com.fatec.merge_skills_kmp.plugins
 
-import com.fatec.merge_skills_kmp.routes.courseRoutes
-import com.fatec.merge_skills_kmp.routes.lessonProgressRoutes
-import com.fatec.merge_skills_kmp.routes.lessonRoutes
-import com.fatec.merge_skills_kmp.routes.questionAttemptRoutes
-import com.fatec.merge_skills_kmp.routes.questionRoutes
-import com.fatec.merge_skills_kmp.routes.userRoutes
+import com.fatec.merge_skills_kmp.routes.productRoutes
+import com.fatec.merge_skills_kmp.routes.stockRoutes
 import io.github.jan.supabase.SupabaseClient
 import io.ktor.server.application.*
 import io.ktor.server.response.*
@@ -22,12 +18,8 @@ fun Application.configureRouting(supabase: SupabaseClient?) {
         }
 
         if (supabase != null) {
-            userRoutes(supabase)
-            courseRoutes(supabase)
-            questionRoutes(supabase)
-            questionAttemptRoutes(supabase)
-            lessonRoutes(supabase)
-            lessonProgressRoutes(supabase)
+            productRoutes(supabase)
+            stockRoutes(supabase)
         } else {
             route("/api") {
                 get("{...}") {

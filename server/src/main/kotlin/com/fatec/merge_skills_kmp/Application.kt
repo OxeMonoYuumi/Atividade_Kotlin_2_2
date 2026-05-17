@@ -1,4 +1,4 @@
-    package com.fatec.merge_skills_kmp
+package com.fatec.merge_skills_kmp
 
 import com.fatec.merge_skills_kmp.plugins.*
 import io.github.jan.supabase.SupabaseClient
@@ -47,7 +47,6 @@ fun Application.module() {
         supabase = createAppSupabaseClient(supabaseUrl, supabaseKey)
     }
 
-    // Pipeline configuration via Modular Plugins (Aula 05)
     configureSerialization()
     configureCORS()
     configureStatusPages()
