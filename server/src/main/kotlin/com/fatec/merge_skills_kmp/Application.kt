@@ -42,9 +42,12 @@ fun Application.module() {
     }
     
     var supabase: SupabaseClient? = null
-    
+
     if (supabaseUrl != null && supabaseKey != null) {
+        println("Conectando ao Supabase...")
         supabase = createAppSupabaseClient(supabaseUrl, supabaseKey)
+    } else {
+        println("ERRO: Variáveis do Supabase não encontradas")
     }
 
     configureSerialization()

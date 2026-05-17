@@ -2,7 +2,6 @@ package com.fatec.merge_skills_kmp.domain.models
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import java.util.Date
 
 @Serializable
 data class Product(
@@ -15,6 +14,7 @@ data class Product(
     val createdAt: String? = null
 )
 
+@Serializable
 data class Stock(
     val id: String,
     @SerialName("product_id")
@@ -23,9 +23,10 @@ data class Stock(
     val unitPrice: Double,
     val location: String,
     @SerialName("update_at")
-    val updateAt: Date
+    val updateAt: String
 )
 
+@Serializable
 data class Summary(
     @SerialName("product_id")
     val productId: String,

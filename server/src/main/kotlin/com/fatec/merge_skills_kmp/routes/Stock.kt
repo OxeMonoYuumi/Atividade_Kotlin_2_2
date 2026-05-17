@@ -74,7 +74,7 @@ fun Route.stockRoutes(supabase: SupabaseClient){
         }
         get("/summary") {
             try {
-                val summary = supabase.postgrest["stocks"].select().decodeList<Summary>()
+                val summary = supabase.postgrest["stock_summary"].select().decodeList<Summary>()
                 call.respond(summary)
             } catch (e: Exception) {
                 call.respond(HttpStatusCode.InternalServerError, mapOf("error" to (e.message ?: "Erro no resumo")))
